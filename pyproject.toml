@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phamnet"
+version = "1.0.0"
+description = "PHAMNet: multiscale feature learning with parallel hybrid attention for fundus disease recognition"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "tensorflow>=2.16",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "pillow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+phamnet = "phamnet.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["phamnet*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
